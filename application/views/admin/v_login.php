@@ -11,6 +11,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <title>Login Administrator</title>
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -31,7 +32,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="message warning">
     <div class="inset">
         <div class="login-head">
-            <h1>Login Form</h1>
+            <h1>Login Form - Optik CSL</h1>
             <div class="alert-close"> </div>
         </div>
         <form method="post" action="">
@@ -57,7 +58,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="clear"> </div>
 <!--- footer --->
 <div class="footer">
-    <p>Template by <a href="http://w3layouts.com">w3layouts</a></p>
+    <p>&copy; <a href="http://w3layouts.com">2020</a></p>
 </div>
 </body>
 </html>
