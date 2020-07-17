@@ -6,7 +6,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="<?php echo base_url('admin/dashboard');?>">SB Admin</a>
+    <a class="navbar-brand" href="<?php echo base_url('admin/dashboard');?>">Admin CSL - <?php echo $this->session->userdata('nama'); ?></a>
 </div>
 <ul class="nav navbar-right top-nav">
     <!--            <li class="dropdown">-->
