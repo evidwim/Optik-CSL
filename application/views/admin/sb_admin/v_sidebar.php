@@ -16,7 +16,7 @@
 				</ul>
 			<?php } else { ?>
 				<a href="<?php echo base_url($value['url']);?>"><i class="<?php echo $value['icon'];?>"></i> 	
-	        		<?php echo ucfirst($value['nama']);?>
+	        		<?php echo ucfirst(str_replace('_', ' ', $value['nama']));?>
 	        	</a>
 			<?php } ?>
 	        

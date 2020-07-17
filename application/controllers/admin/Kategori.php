@@ -11,8 +11,8 @@ class Kategori extends Super
         $this->language       = 'english'; /** Indonesian / english **/
         $this->tema           = "flexigrid"; /** datatables / flexigrid **/
         $this->tabel          = "kategori";
-        $this->active_id_menu = "Kategori";
-        $this->nama_view      = "Kategori";
+        $this->active_id_menu = "kategori_kacamata";
+        $this->nama_view      = "kategori";
         $this->status         = true; 
         $this->field_tambah   = array(); 
         $this->field_edit     = array(); 

@@ -11,7 +11,7 @@ class Penjualan extends Super
         $this->language       = 'english'; /** Indonesian / english **/
         $this->tema           = "flexigrid"; /** datatables / flexigrid **/
         $this->tabel          = "penjualan";
-        $this->active_id_menu = "Penjualan";
+        $this->active_id_menu = "penjualan";
         $this->nama_view      = "Penjualan";
         $this->status         = true; 
         $this->field_tambah   = array(); 

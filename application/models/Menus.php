@@ -35,6 +35,7 @@ class Menus extends CI_Model
 				'child'=>$tmp
 			);
 		}
+
 		return $data;
 	}
 

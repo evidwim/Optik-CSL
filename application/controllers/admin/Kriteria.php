@@ -11,7 +11,7 @@ class Kriteria extends Super
         $this->language       = 'english'; /** Indonesian / english **/
         $this->tema           = "flexigrid"; /** datatables / flexigrid **/
         $this->tabel          = "kriteria";
-        $this->active_id_menu = "Kriteria";
+        $this->active_id_menu = "kriteria";
         $this->nama_view      = "Kriteria";
         $this->status         = true; 
         $this->field_tambah   = array(); 

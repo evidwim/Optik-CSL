@@ -31,3 +31,8 @@
     color: #000;
     background-color: #fcca16 !important;
 }
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+    color: #fff !important;
+    background-color: #1a3562 !important;
+}

@@ -11,7 +11,7 @@ class Useradmin extends Super
         $this->language       = 'english'; /** Indonesian / english **/
         $this->tema           = "datatables"; /** datatables / flexigrid **/
         $this->tabel          = "admin";
-        $this->active_id_menu = "user";
+        $this->active_id_menu = "useradmin";
         $this->nama_view      = "User";
         $this->status         = true; 
         $this->field_tambah   = array('email','password','nama','status'); 

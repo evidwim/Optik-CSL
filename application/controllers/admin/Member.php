@@ -11,7 +11,7 @@ class Member extends Super
         $this->language       = 'english'; /** Indonesian / english **/
         $this->tema           = "flexigrid"; /** datatables / flexigrid **/
         $this->tabel          = "member";
-        $this->active_id_menu = "Member";
+        $this->active_id_menu = "member";
         $this->nama_view      = "Member";
         $this->status         = true; 
         $this->field_tambah   = array(); 
