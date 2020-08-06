@@ -29,7 +29,8 @@ class Super extends CI_Controller
         }
     }
     protected function generateData(){
-        $data['active']     = $this->active_id_menu;
+        // var_dump($this->active_id_menu); die();
+            $data['active']     = $this->active_id_menu;
             $data['title']      = 'Admin - '.$this->nama_view;
             $data['judul_1']    = 'Admin - '.$this->nama_view;
             $data['judul_2']    = '';

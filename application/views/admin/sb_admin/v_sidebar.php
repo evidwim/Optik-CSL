@@ -2,9 +2,15 @@
 // print_r($menu);
 ?>
 <ul class="nav navbar-nav side-nav">
-	<?php 
-	foreach ($menu as $key => $value) { ?>
-		<li class="<?php echo strtolower(str_replace(' ', '_', $value['nama']))?>">
+	<?php
+	foreach ($menu as $key => $value) {
+		$actived ="";
+	if($active== strtolower(str_replace(' ', '_', $value['nama']))){
+		$actived = 'active';
+	} 
+	// var_dump($active.strtolower(str_replace(' ', '_', $value['nama']))); die();
+		?>
+		<li class="<?php echo strtolower(str_replace(' ', '_', $value['nama']))?> <?php echo $actived ?>">
 			<?php if($value['child']) { ?>
 				<a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="<?php echo $value['icon'];?>"></i> <?php echo ucfirst($value['nama']);?> <i class="fa fa-fw fa-caret-down"></i></a>
 				<ul id="demo" class="collapse">
