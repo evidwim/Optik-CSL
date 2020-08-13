@@ -135,4 +135,82 @@ class Kalkulasi extends Super
         $data['output'] = $this->crud->render();
         $this->load->view('admin/'.$this->session->userdata('theme').'/v_index',$data);
     }
+
+
+    public function prosesKriteria(){
+        $id = $this->input->post('id');
+        $getPeriode = $this->db->get_where('kalkulasi',array('id'=>$id))->row();
+
+        $periode_awal = $getPeriode->periode_awal;
+        $periode_akhir = $getPeriode->periode_akhir;
+
+        $this->db->select('id_member');
+        $this->db->where('tanggal_transaksi >=',$periode_awal);
+        $this->db->where('tanggal_transaksi <=',$periode_akhir);
+        $this->db->group_by('id_member');
+        $getPenjualan = $this->db->get('penjualan')->result();
+
+        $totalM =[];
+        $totalR = [];
+        $totalF = [];
+        $member = [];
+        $no = 0;
+        $data = [];
+        foreach ($getPenjualan as $rowPenjualan) {
+            $id_member =  $rowPenjualan->id_member;
+            $member[$no] = $id_member;
+
+            $this->db->where('id_member',$id_member);
+            $this->db->where('tanggal_transaksi >=',$periode_awal);
+            $this->db->where('tanggal_transaksi <=',$periode_akhir);
+            $memberRow = $this->db->get('penjualan');
+            $getMember = $memberRow->result();
+
+            //total nilai M
+            $total = 0;
+            foreach ($getMember as $rowMember) {
+                $total = $total + $rowMember->total_harga;
+            }
+
+            $totalM[$no] = $this->bobot($total,'M');
+            //batas mencari total M
+
+            //mencari F
+            $rowMember = $memberRow->num_rows();
+            $totalF[$no] = $this->bobot($rowMember,'F');
+           //Batas mencari F
+
+            //mencari R
+            $this->db->limit(1);
+            $this->db->order_by('tanggal_transaksi','DESC');
+            $getR = $memberRow->row();
+            $tanggal[$no] = $getR->tanggal_transaksi;
+
+            $tgl_awal = new DateTime($tanggal[$no]);
+            $dateNow = new DateTime($periode_akhir);
+            $lama[$no] = $dateNow->diff($tgl_awal)->format("%a");
+
+            $totalR[$no] = $this->bobot($lama[$no],'R');
+            //Batas mencari R
+
+            //tampil
+            $data[$no] = 'id_member: '.$member[$no].' M: '.$totalM[$no].' F: '.$totalF[$no].' R: '.$totalR[$no].'<br>';
+
+            $no++;
+        }
+        var_dump($data);
+        die();
+    }
+
+    public function bobot($bobotTeam,$code){
+
+        $getBobotM = $this->db->query('SELECT * FROM kriteria WHERE batas_awal <= "'.$bobotTeam.'" AND "'.$bobotTeam.'" <= batas_akhir AND code ="'.$code.'"')->row();
+
+        if($getBobotM){
+            $hasil = $getBobotM->bobot;
+
+            return $hasil;        
+        }
+        
+    }
 }

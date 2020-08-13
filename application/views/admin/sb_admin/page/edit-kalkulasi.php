@@ -1,4 +1,4 @@
-<form action="<?php echo base_url('admin/Kalkulasi/insertKalkulasi') ?>" method="post"> 
+<form action="<?php echo base_url('admin/Kalkulasi/prosesKriteria') ?>" method="post"> 
   <div class="col-md-10">
     <div class="row">
       <div class="col-md-2">
@@ -32,6 +32,7 @@
     </div>
     <div class="row">
       <div class="col-md-7" style="text-align: right;">
+        <input type="hidden" value="<?php echo $periode->id ?>" name='id'>
         <input type="submit" value="Proses" class="btn btn-primary">
       </div>
     </div>
