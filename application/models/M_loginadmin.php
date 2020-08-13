@@ -19,7 +19,7 @@ class M_loginadmin extends CI_Model {
                 $this->session->set_userdata('nama',$result->nama);
                 $this->session->set_userdata('gambar',$result->gambar);
                 $this->session->set_userdata('theme','sb_admin');
-
+                // var_dump($this->session->userdata()); die();
 
                 redirect('admin/dashboard');
             } else {
