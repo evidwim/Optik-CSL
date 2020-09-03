@@ -32,7 +32,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="message warning">
     <div class="inset">
         <div class="login-head">
-            <h1>Login Form - Optik CSL</h1>
+            <!-- <h1>Login Form - Optik CSL</h1> -->
+            <h1><img src="<?php echo base_url('assets/user')?>/img/logo.png" alt=""  width="70" height= "70" style="float: left; margin-top: -20px;"> Login Optik CSL</h1>
+
             <div class="alert-close"> </div>
         </div>
         <form method="post" action="">
@@ -58,7 +60,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="clear"> </div>
 <!--- footer --->
 <div class="footer">
-    <p>&copy; <a href="http://w3layouts.com">2020</a></p>
+    <!-- <p>&copy; <a href="http://w3layouts.com">2020</a></p> -->
 </div>
 </body>
 </html>
