@@ -417,4 +417,37 @@ class Kalkulasi extends Super
     public function hitungC2($bobot_r, $nilai_r, $bobot_f, $nilai_f, $bobot_m, $nilai_m){
       return round(sqrt((($bobot_r - $nilai_r)*($bobot_r - $nilai_r)) + (($bobot_f - $nilai_f)*($bobot_f - $nilai_f)) + (($bobot_m - $nilai_m)*($bobot_m - $nilai_m))),2);
     }
+
+    public function hasilKalkulasi($id_proses){
+        $data = [];
+        $data = array_merge($data,$this->generateBreadcumbs());
+        $data = array_merge($data,$this->generateData());
+        $this->generate();
+
+        $this->db->where('hasil2',1);
+        $this->db->where('id_proses',$id_proses);
+        $this->db->join('member','member.id=hasil_rfm.id_member','left');
+        $data['totalLoyal'] = $this->db->get('hasil_rfm')->num_rows();
+
+        $this->db->where('hasil2',0);
+        $this->db->where('id_proses',$id_proses);
+        $this->db->join('member','member.id=hasil_rfm.id_member','left');
+        $data['totalTidakLoyal'] = $this->db->get('hasil_rfm')->num_rows();
+
+        $this->db->where('hasil2',1);
+        $this->db->order_by('c21','ASC');
+        $this->db->where('id_proses',$id_proses);
+        $this->db->join('member','member.id=hasil_rfm.id_member','left');
+        $data['dataTeamLoyal'] = $this->db->get('hasil_rfm')->result();
+
+        $this->db->where('hasil2',0);
+        $this->db->order_by('c22','ASC');
+        $this->db->where('id_proses',$id_proses);
+        $this->db->join('member','member.id=hasil_rfm.id_member','left');
+        $data['dataTeamTidakLoyal'] = $this->db->get('hasil_rfm')->result();
+
+        $data['page'] = "v_diagram";
+        $data['output'] = $this->crud->render();
+        $this->load->view('admin/'.$this->session->userdata('theme').'/v_index',$data);
+    }
 }
