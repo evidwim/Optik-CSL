@@ -232,14 +232,14 @@ class Kalkulasi extends Super
 
         $this->db->set('id_proses',$id);
         $this->db->set('tipe','C1');
-        $this->db->set('r','5');
+        $this->db->set('r','4');
         $this->db->set('f','2');
         $this->db->set('m','3');
         $this->db->insert('centroid_data');
 
         $this->db->set('id_proses',$id);
         $this->db->set('tipe','C2');
-        $this->db->set('r','3');
+        $this->db->set('r','2');
         $this->db->set('f','1');
         $this->db->set('m','1');
         $this->db->insert('centroid_data');

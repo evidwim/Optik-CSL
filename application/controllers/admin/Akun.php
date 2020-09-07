@@ -35,8 +35,8 @@ class Akun extends CI_Controller {
 
     	} else {
     		$data['active']     = 'dash';
-	        $data['judul_1']    = 'Dashboard';
-	        $data['judul_2']    = 'Selamat Datang';
+	        $data['judul_1']    = 'Admin';
+	        $data['judul_2']    = 'Reset Password';
 	        $data['page']       = 'v_setting';
 	        $data['menu'] = $this->Menus->generateMenu();
 	        $data['breadcumbs'] = array(

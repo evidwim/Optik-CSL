@@ -26,7 +26,7 @@
 		</table>
 	</div>
 	<div class="col-md-6">
-		<h2>Tidak Loyal:</h2>
+		<h2>Kurang Loyal:</h2>
 		<table class="table table-bordered" id="tableTidakLoyal">
 			<thead>
 				<tr>
@@ -63,11 +63,11 @@ Highcharts.chart('container', {
         text: 'Diagram Clustering'
     },
     xAxis: {
-        categories: ['Loyal', 'Tidak Loyal']
+        categories: ['Loyal', 'Kurang Loyal']
     },
     yAxis: {
         title: {
-            text: 'Total Team'
+            text: 'Total Pelanggan'
         }
 
     },
