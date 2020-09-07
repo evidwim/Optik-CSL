@@ -243,6 +243,19 @@ class Kalkulasi extends Super
         $this->db->set('f','1');
         $this->db->set('m','1');
         $this->db->insert('centroid_data');
+        /*$this->db->set('id_proses',$id_proses);
+       $this->db->set('tipe','C1');
+       $this->db->set('r',$c[1]['r']);
+       $this->db->set('f',$c[1]['f']);
+       $this->db->set('m',$c[1]['m']);
+       $this->db->insert('centroid_data');
+
+       $this->db->set('id_proses',$id_proses);
+       $this->db->set('tipe','C2');
+       $this->db->set('r',$c[2]['r']);
+       $this->db->set('f',$c[2]['f']);
+       $this->db->set('m',$c[2]['m']);
+       $this->db->insert('centroid_data');*/
 
         redirect(base_url('admin/Kalkulasi/prosesHitung/'.$id));
         // var_dump($data);
