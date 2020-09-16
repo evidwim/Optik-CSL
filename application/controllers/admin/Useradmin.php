@@ -19,7 +19,7 @@ class Useradmin extends Super
         $this->field_tampil   = array('email','nama'); 
         $this->folder_upload  = 'assets/uploads/files';
         $this->add            = true;
-        $this->edit           = true;
+        $this->edit           = false;
         $this->delete         = true;
         $this->crud;
     }

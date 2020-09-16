@@ -20,7 +20,7 @@ class Member extends Super
         $this->folder_upload  = 'assets/uploads/files';
         $this->add            = true;
         $this->edit           = true;
-        $this->delete         = true;
+        $this->delete         = false;
         $this->crud;
     }
 

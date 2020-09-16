@@ -32,7 +32,16 @@ class Akun extends CI_Controller {
     public function reset_password()
     {
     	if($_POST){
+            var_dump($_POST);
+            $cur_pass = $this->input->post('cur_pass');
+            $new_password = $this->input->post('new_password');
+            $re_password = $this->input->post('re_password');
 
+            if($new_password != $re_password){
+                redirect(base_url('admin/akun/reset_password'));
+            }else{
+                $this->db->set('')
+            }
     	} else {
     		$data['active']     = 'dash';
 	        $data['judul_1']    = 'Admin';
