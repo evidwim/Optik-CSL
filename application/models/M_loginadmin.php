@@ -16,6 +16,7 @@ class M_loginadmin extends CI_Model {
             if($result){
                 $this->session->set_userdata('login_admin',true);
                 $this->session->set_userdata('email',$result->email);
+                $this->session->set_userdata('id_admin',$result->id);
                 $this->session->set_userdata('nama',$result->nama);
                 $this->session->set_userdata('gambar',$result->gambar);
                 $this->session->set_userdata('theme','sb_admin');
